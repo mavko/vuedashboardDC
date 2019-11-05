@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/Cellar/node/12.12.0/bin/node /usr/local/Cellar/yarn/1.19.1/libexec/bin/yarn.js add animate.css --registry=[2K[1Ghttps://registry.yarnpkg.com --json
+  /usr/local/Cellar/node/12.12.0/bin/node /usr/local/Cellar/yarn/1.19.1/libexec/bin/yarn.js add netlify-identity-widget --registry=[2K[1Ghttps://registry.yarnpkg.com --json
 
 PATH: 
-  /Users/sebastianselling/Documents/vue-admin-dashboard/node_modules/.bin:/Users/sebastianselling/Documents/node_modules/.bin:/Users/sebastianselling/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/usr/local/Cellar/node/12.12.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Apple/bin
+  /Users/sebastianselling/Documents/vuedashboardDC/node_modules/.bin:/Users/sebastianselling/Documents/node_modules/.bin:/Users/sebastianselling/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/usr/local/Cellar/node/12.12.0/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Apple/bin
 
 Yarn version: 
   1.19.1
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: [2K[1Ghttps://registry.yarnpkg.com/animate.css: Invalid URI "[2K[1Ghttps://registry.yarnpkg.com/animate.css"
+  Error: [2K[1Ghttps://registry.yarnpkg.com/netlify-identity-widget: Invalid URI "[2K[1Ghttps://registry.yarnpkg.com/netlify-identity-widget"
       at Request.module.exports.Request.init (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:140652:31)
       at new Request (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:140506:8)
       at request (/usr/local/Cellar/yarn/1.19.1/libexec/lib/cli.js:137412:10)

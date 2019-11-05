@@ -4,49 +4,49 @@
     <div class="stripes-container initial">
       <div class="stripe gradient"></div>
       <div class="left-dots-container">
-        <img src="@/assets/dots-left.svg" alt="" />
+        <img src="@/assets/dots-left.svg" alt />
       </div>
       <div class="light-dots-container"></div>
       <div class="dark-dots-container">
-        <img src="@/assets/dots-right-dark.svg" alt="" />
+        <img src="@/assets/dots-right-dark.svg" alt />
       </div>
     </div>
     <div class="request">
       Dont have a inspectionOS account?
       <router-link to="/request">Request an account</router-link>
     </div>
-    <transition name="slide-in-down" enter-active-class="animated fadeIn">
-      <div class="login">
-        <div class="login-header">
-          <img src="@/assets/inspectionOS.svg" alt="" />
+    <div class="login">
+      <div class="login-header">
+        <img src="@/assets/inspectionOS.svg" alt />
+      </div>
+      <form @submit.prevent="onSubmit">
+        <div class="form-row text email">
+          <label class="email" for="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="jane.doe@example.com"
+            required="yes"
+            v-model="email"
+          />
         </div>
-        <fieldset>
-          <div class="form-row text email">
-            <label class="email" for="email">Email</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="jane.doe@example.com"
-              required="yes"
-            />
-          </div>
-          <div class="form-row text password">
-            <label class="password" for="password">Password</label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              placeholder="*****"
-              required="yes"
-            />
-          </div>
-        </fieldset>
+        <div class="form-row text password">
+          <label class="password" for="password">Password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            placeholder="*****"
+            required="yes"
+            v-model="password"
+          />
+        </div>
         <div class="submit-row">
           <button class="common-Button common-Button--default">Sign In</button>
         </div>
-      </div>
-    </transition>
+      </form>
+    </div>
     <router-link to="/recover" class="recover-pw"
       >Forgot your password?</router-link
     >
@@ -54,15 +54,48 @@
 </template>
 
 <script>
+import { auth } from "@/main";
+
 export default {
   name: "SignIn",
   data() {
     return {
-      show: false
+      email: null,
+      password: null,
+      hasText: false,
+      text: ""
     };
   },
+  methods: {
+    onSubmit() {
+      const email = this.email;
+      const password = this.password;
+
+      auth
+        .login(email, password, true)
+        .then(response => {
+          this.$router.replace("/");
+        })
+        .catch(error => {
+          alert("Error: " + error);
+        });
+    }
+  },
   mounted() {
-    this.show = true;
+    const params = this.$route.params;
+
+    if (params.userLoggedOut) {
+      this.hasText = true;
+      this.text = "You have logged out!";
+    } else if (params.userRecoveredAccount) {
+      this.hasText = true;
+      this.text = `A recovery email has been sent to ${params.email}`;
+    } else if (params.userRequestedAccount) {
+      this.hasText = true;
+      this.text = `Your request has been sent to an administator for ${
+        params.email
+      }`;
+    }
   }
 };
 </script>
