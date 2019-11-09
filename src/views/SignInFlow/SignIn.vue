@@ -11,6 +11,7 @@
         <img src="@/assets/dots-right-dark.svg" alt />
       </div>
     </div>
+    <Notification v-if="hasText" :text="text" />
     <div class="request">
       Dont have a inspectionOS account?
       <router-link to="/request">Request an account</router-link>
@@ -55,9 +56,13 @@
 
 <script>
 import { auth } from "@/main";
+import Notification from "@/components/Notification";
 
 export default {
   name: "SignIn",
+  components: {
+    Notification
+  },
   data() {
     return {
       email: null,
@@ -123,6 +128,8 @@ img {
     0 -18px 60px -10px rgba(0, 0, 0, 0.025);
   background: #f7fafc;
   margin: 0 auto;
+  max-width: 440px;
+  width: 100%;
   .login-header {
     box-shadow: inset 0 -1px #e3e8ee;
     background-color: #fff;
@@ -306,6 +313,8 @@ input {
   font-weight: 400;
   font-size: 17px;
   line-height: 26px;
+  max-width: 300px;
+  width: 100%;
   -webkit-transition: background-color 0.1s ease-in, color 0.1s ease-in;
   transition: background-color 0.1s ease-in, color 0.1s ease-in;
 

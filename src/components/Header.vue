@@ -4,14 +4,30 @@
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
       <router-link to="/SignIn">Sign In</router-link>
+      <a @click="onClick">Logout</a>
     </div>
     <router-view />
   </div>
 </template>
+import {auth} form "@/main";
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  methods: {
+    onClick() {
+      const user = auth.currentUser();
+
+      user
+        .logout()
+        .then(response => {
+          this.$router.push({name: "signin", params: { userLoggedOut: true }});
+        })
+        .ctach(error => {
+          alert("Error", error);
+        })
+    }
+  }
 };
 </script>
 

@@ -89,6 +89,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "@/global-styles/colors.scss";
+@import "@/global-styles/typography.scss";
+@import "@/global-styles/backgrounds.scss";
 .container {
   padding-left: 15%;
   padding-right: 10%;
