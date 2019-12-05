@@ -44,7 +44,7 @@
           />
         </div>
         <div class="submit-row">
-          <button class="common-Button common-Button--default">Sign In</button>
+          <button class="common-Button common-Button--default" type="submit">Sign In</button>
         </div>
       </form>
     </div>

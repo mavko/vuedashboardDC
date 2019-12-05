@@ -32,7 +32,7 @@
           />
         </div>
         <div class="submit-row">
-          <button class="common-Button common-Button--default">Request Account</button>
+          <button class="common-Button common-Button--default" type="submit">Request Account</button>
         </div>
       </form>
     </div>
@@ -64,7 +64,7 @@ export default {
       let slackURl = new URL("https://slack.com/api/chat.postMessage")
 
       const data = {
-        token: 'xoxp-860831059589-849353704243-863036288678-58e5a3b8171e5dc87973c5453dd260a6',
+        token: 'xoxp-860831059589-849353704243-862804370295-6267d53d274b4d10056b4cf8bd040922',
         channel: "hq",
         text: '${email} has requested admin access to HQ. Plis go 2 netlify 2 inv them.'
       };
