@@ -9,7 +9,7 @@
     <router-view />
   </div>
 </template>
-import {auth} form "@/main";
+import { auth } form "@/main";
 
 <script>
 export default {

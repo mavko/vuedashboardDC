@@ -1,6 +1,9 @@
 <template>
   <div class="home">
     <Header />
+    <div class="spread">
+      <h1>Traffic Overview</h1>
+    </div>
     <Background />
   </div>
 </template>
@@ -9,13 +12,30 @@
 // @ is an alias to /src
 import Header from "@/components/Header.vue";
 import Background from "@/components/Background.vue";
+import {db} from "@/firebase";
 
 export default {
   name: "home",
   components: {
     Header,
     Background
-  }
+  },
+  firestore () {
+  return {
+    traffic: {
+        // collection reference.
+        ref: db.collection('persons'),
+        // Bind the collection as an object if you would like to.
+        objects: true,
+        resolve: (data) => {
+            // collection is resolved
+        },
+        reject: (err) => {
+            // collection is rejected
+        }
+      }
+    }
+  },
 };
 </script>
 <style lang="scss" scoped>

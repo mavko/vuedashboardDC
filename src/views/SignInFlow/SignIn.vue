@@ -171,13 +171,13 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
+  -webkit-box-pack: end; 
   -ms-flex-pack: end;
   justify-content: flex-end;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  padding: 15px 20px 15px 0px;
+  padding: 25px 20px 25px 0px;
 }
 .common-Button {
   white-space: nowrap;

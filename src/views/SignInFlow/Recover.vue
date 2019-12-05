@@ -37,17 +37,15 @@
       </form>
     </div>
     <router-link to="/signin" class="recover-pw"
-      >Already have an account? Sign in here</router-link
-    >
+      >Already have an account? Sign in here</router-link>
   </div>
 </template>
 
 <script>
 import { auth } from "@/main";
-import Notification from "@/components/Notification";
 
 export default {
-  name: "SignIn",
+  name: "Recover",
   components: {
     Notification
   },
@@ -64,8 +62,16 @@ export default {
       const email = this.email;
 
       auth.requestPasswordRecovery(email).then(() => {
-        this.$router.push
-      })
+        this.$router.push({
+          name: "signin",
+          params: {
+            userRecoveredAccount: true,
+            email: email
+          }
+        });
+      }).catch(error => {
+        alert("Error: " + error)
+      });
     }
   },
   mounted() {
