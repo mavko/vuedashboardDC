@@ -16,7 +16,7 @@
     "animate.css": "^3.7.0",
     "apexcharts": "^3.2.2",
     "firebase": "^7.5.0",
-    "firebase-admin": "^7.0.0",
+    "firebase-admin": "^13.6.0",
     "gotrue-js": "^0.9.24",
     "netlify-identity-widget": "^1.5.2",
     "netlify-lambda": "^1.4.2",
@@ -31,7 +31,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",
     "@vue/cli-plugin-eslint": "^3.3.0",
-    "@vue/cli-service": "^3.3.0",
+    "@vue/cli-service": "^5.0.9",
     "@vue/eslint-config-prettier": "^4.0.1",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
